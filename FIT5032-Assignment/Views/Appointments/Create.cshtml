@@ -1,0 +1,160 @@
+﻿@model FIT5032_Assignment.Models.Appointment
+
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@*<h2>Create</h2>*@
+
+<div class="container">
+    <div class="row" width: auto>
+
+        <div class="row text-center" style="background-color: white; opacity: 85%;  width: 100%; ">
+
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Appointment</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.FirstName, "First Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.LastName, "Last Name", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+
+                            @Html.DropDownListFor(model => model.Type, new SelectList(ViewBag.typeList), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Clinic, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(model => model.Clinic, new SelectList(ViewBag.clinicList), new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Clinic, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+                    @*Make this into a time picker*@
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.StartTime, "Date", new { @class = "control-label col-md-2" })
+
+                        <div class="col-md-1">
+                            @Html.EditorFor(model => model.StartTime, new { htmlAttributes = new { @class = "datepicker" } })
+                            @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+                    <link href="~/Content/themes/base/datepicker.css" rel="stylesheet" />
+
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.EndTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.EndTime, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.EndTime, "", new { @class = "text-danger" })
+                            </div>
+                        </div>*@
+
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.User_Id, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.User_Id, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.User_Id, "", new { @class = "text-danger" })
+                            </div>
+                        </div>*@
+
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <input type="submit" value="Create" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("See upcoming appointments", "Index")
+            </div>
+
+            @section Scripts {
+                @Scripts.Render("~/bundles/jqueryval")
+
+
+                <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+                <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+                <link rel="stylesheet" href="/resources/demos/style.css">
+                <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+                <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+                <script>
+
+                    $(document).ready(function () {
+                        $(".datepicker").datepicker({
+                            dateFormat: "mm-dd-yy",
+                            changemonth: true,
+                            changeyear: true
+                        });
+                    });
+                </script>
+            }
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <br />
+    <br />
+    <div class="row" width: auto>
+
+        <div class="row text-center" style="background-color: white; opacity: 85%;  width: 100%; ">
+            <h4>Time slots available everyday(including weekends)</h4>
+            <hr />
+           
+           
+        </div>
+
+        <div class="row text-center" style="background-color: white; opacity: 85%;  width: 100%; ">
+            <p>*2 slots of 12pm-2pm</p>
+            <p>*2 slots of 2pm-4pm</p>
+            <p>*2 slots of 4pm-6pm</p>
+            <div  >
+                @Html.ActionLink("Check if your chosen date is available", "AppointmentCalender")
+            </div>
+        </div>
+
+        </div>
+
+    </div>

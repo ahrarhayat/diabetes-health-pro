@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+
+
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#create1").click(function () {
+                location.href = '@Url.Content("~/DietPlans/Create")';
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#create2").click(function () {
+                location.href = '@Url.Content("~/DietPlans/Index")';
+            });
+
+        });
+    </script>
+
+    
+
+
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+
+<body>
+    <br />
+    <br />
+    <br />
+
+    <div class="container">
+        <div class="row" style="background-color: white; opacity: 87%; color: black; width: auto ">
+            <div class="col-md-1">
+
+            </div>
+            <div class=" col-md-10">
+                @* <h1 style="font-weight:bolder; text-align:center">Create edit or delete diet plans</h1>
+                    <br />
+
+                    <br />
+
+                    <br />*@
+            </div>
+            <div class="col-md-1">
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    
+    <div class="container">
+        <div class="row text-center">
+
+
+            <div class=" col-md-6" style="background-color: white; opacity: 85%; color: black">
+
+                <br />
+                @*<p style=" font-size: medium; text-align: center;">
+
+                        <br />
+                        <br />
+
+                    </p>*@
+                <br />
+                <div class="row text-center">
+                    <h1 style="font-weight: bolder;  text-align:center">
+                        Create a new Diet Plan
+                    </h1>
+                    <button id="create1" type="button" class="btn btn-danger" style="background-color: dodgerblue;
+                    border-color: dodgerblue; width: 160px ">
+                        Create
+                    </button>
+
+                </div>
+                <br />
+            </div>
+
+            <div class="col-md-6" style="background-color: white; opacity: 85%; color: black">
+
+                <br />
+
+                <br />
+                <div class="row text-center">
+
+                    <h1 style="font-weight: bolder;  text-align:center">
+                        View/Edit/Delete Diet Plans
+                    </h1>
+                    <button id="create2" type="button" class="btn btn-danger" style="background-color: dodgerblue;
+                    border-color: dodgerblue; width: 160px ">
+                        Diet Plans
+                    </button>
+
+
+
+                </div>
+                <br />
+
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <br />
+    <br />
+</body>
+
+</html>
+
+
+

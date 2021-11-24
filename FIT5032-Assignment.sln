@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIT5032-Assignment", "FIT5032-Assignment\FIT5032-Assignment.csproj", "{1B6F69E4-D234-4F14-B4D1-00D08CCA8C49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIT5032-Assignment.Tests", "FIT5032-Assignment.Tests\FIT5032-Assignment.Tests.csproj", "{58B74DD6-61AD-4B63-A04B-8C901A2BA30A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B6F69E4-D234-4F14-B4D1-00D08CCA8C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B6F69E4-D234-4F14-B4D1-00D08CCA8C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B6F69E4-D234-4F14-B4D1-00D08CCA8C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B6F69E4-D234-4F14-B4D1-00D08CCA8C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B74DD6-61AD-4B63-A04B-8C901A2BA30A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B74DD6-61AD-4B63-A04B-8C901A2BA30A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B74DD6-61AD-4B63-A04B-8C901A2BA30A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B74DD6-61AD-4B63-A04B-8C901A2BA30A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ECAA802C-B5D7-4A04-AFED-40366A99AA2A}
+	EndGlobalSection
+EndGlobal

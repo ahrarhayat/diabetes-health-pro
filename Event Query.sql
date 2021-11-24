@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[Events] (
+[Id] INT IDENTITY (1, 1) NOT NULL,
+[Title] VARCHAR (MAX) NOT NULL,
+[Description] VARCHAR (MAX) NOT NULL,
+[Venue] VARCHAR (MAX) NOT NULL,
+[Start] DATETIME NOT NULL,
+[End] DATETIME NOT NULL,
+[User_Id] nvarchar(128) NOT NULL,
+PRIMARY KEY CLUSTERED ([Id] ASC),
+
+FOREIGN KEY (User_Id) REFERENCES AspNetUsers(Id)
+
+);

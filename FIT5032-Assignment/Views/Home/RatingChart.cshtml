@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "RatingChart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/Charts/exporting.js"></script>
+<script src="~/Scripts/Charts/highcharts.js"></script>
+
+
+
+<div  class="jumbotron">
+     <div id="container"></div>
+
+     </div>
+
+<script>
+
+    $(document).ready(function () {
+            $.getJSON("GetData", function (data) {
+               
+                    Highcharts.chart('container', {
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false,
+                            type: 'pie'
+                        },
+                        title: {
+                            text: 'Breakdown of Diet Plan Ratings by Users'
+                        },
+                        tooltip: {
+                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        accessibility: {
+                            point: {
+                                valueSuffix: '%'
+                            }
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: true,
+                                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                                }
+                            }
+                        },
+                        series: [{
+                            name: 'Brands',
+                            colorByPoint: true,
+                            data: [{
+                                name: 'Average Rating 5',
+                                y: data.Fives,
+
+                            },  {
+                                name: 'Average Rating 4',
+                                y: data.Fours
+                            }, {
+                                name: 'Average Rating 3',
+                                y: data.Threes
+                            }, {
+                                name: 'Average Rating 2',
+                                y: data.Twos
+                            }, {
+                                name: 'Average Rating 1',
+                                y: data.Ones
+                            }]
+                        }]
+                    });
+
+
+            });
+    });
+
+
+
+
+    
+</script>

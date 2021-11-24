@@ -1,0 +1,87 @@
+﻿@model IEnumerable<FIT5032_Assignment.Models.Appointment>
+
+@{
+    ViewBag.Title = "NoDoctorView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>We're all booked up for the date you have chosen, please select another date'</h2>
+<div class="row text-center" style="background-color: white; opacity: 85%; color: black; width: 100%;height:200%">
+
+    <p>
+            @Html.ActionLink("Book on another date", "Create")
+        </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.DoctorID)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Clinic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.User_Id)
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.DoctorID)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Clinic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndTime)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.User_Id)
+                    </td>*@
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

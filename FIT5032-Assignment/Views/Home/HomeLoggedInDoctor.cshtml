@@ -1,0 +1,246 @@
+﻿@model IEnumerable<FIT5032_Assignment.Models.Appointment>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#create1").click(function () {
+                location.href = '@Url.Content("~/UploadFiles/Create")';
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#create2").click(function () {
+                location.href = '@Url.Content("~/Home/MealPlan")';
+            });
+
+        });
+    </script>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+
+            <div class=" col-md-10">
+
+                <br />
+                @*<p style=" font-size: medium; text-align: center;">
+
+                        <br />
+                        <br />
+
+                    </p>*@
+                <br />
+                <div class="row text-center" style="background-color: white; opacity: 85%; color: black; width: auto ">
+
+                    <h1 style="font-weight: bolder;  text-align:center">
+                        Being proactive every day, keeps diabetes at bay!
+                    </h1>
+                    @*<button id="sugarLevel" type="button" class="btn btn-danger" style="background-color: dodgerblue;
+                        border-color: dodgerblue; width: 150px ">
+                            Go!
+                        </button>*@
+                </div>
+                <br />
+            </div>
+
+            <div class="col-md-1">
+
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+
+            </div>
+
+            <div class=" col-md-10" style="background-color: white; opacity: 85%; color: black">
+
+                <br />
+                @*<p style=" font-size: medium; text-align: center;">
+
+                        <br />
+                        <br />
+
+                    </p>*@
+                <br />
+                <div class="row text-center">
+
+                    <h1 style="font-weight: bolder;  text-align:center">Your Upcoming Appointment(s)</h1>
+
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FirstName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LastName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Type)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Description)
+                            </th>
+                            @*<th>
+                                    @Html.DisplayNameFor(model => model.DoctorID)
+                                </th>*@
+                            <th>
+                                @Html.DisplayNameFor(model => model.Clinic)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.StartTime)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.EndTime)
+                            </th>
+                            @*<th>
+                                    @Html.DisplayNameFor(model => model.User_Id)
+                                </th>*@
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Type)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Description)
+                                </td>
+                                @*<td>
+                                        @Html.DisplayFor(modelItem => item.DoctorID)
+                                    </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Clinic)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.StartTime)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EndTime)
+                                </td>
+                                @*<td>
+                                        @Html.DisplayFor(modelItem => item.User_Id)
+                                    </td>*@
+                                <!--<td>-->
+                                @* @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                                <!--</td>-->
+                            </tr>
+                        }
+
+                    </table>
+
+                </div>
+                <br />
+            </div>
+
+            <div class="col-md-1">
+
+            </div>
+
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-1">
+
+            </div>
+
+            <div class=" col-md-5" style="background-color: white; opacity: 85%; color: black">
+
+                <br />
+                @*<p style=" font-size: medium; text-align: center;">
+
+                <br />
+                <br />
+
+            </p>*@
+                <br />
+                <div class="row text-center">
+                    <h1 style="font-weight: bolder;  text-align:center">
+                        Send newsletter
+                    </h1>
+                    <button id="create1" type="button" class="btn btn-danger" style="background-color: dodgerblue;
+                    border-color: dodgerblue; width: 160px ">
+                        Send now
+                    </button>
+
+                </div>
+                <br />
+            </div>
+
+            <div class="col-md-5" style="background-color: white; opacity: 85%; color: black">
+
+                <br />
+
+                <br />
+                <div class="row text-center">
+
+                    <h1 style="font-weight: bolder;  text-align:center">
+                        Create/Edit Diet Plans
+                    </h1>
+                    <button id="create2" type="button" class="btn btn-danger" style="background-color: dodgerblue;
+                    border-color: dodgerblue; width: 160px ">
+                        Diet Plans
+                    </button>
+
+
+
+                </div>
+                <br />
+
+            </div>
+
+            <div class="col-md-1">
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+</html>

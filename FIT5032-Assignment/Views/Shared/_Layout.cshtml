@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Diabetes Health Pro</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+</head>
+<body style="background-color: #e9f5f8; background-repeat: no-repeat; background-size: cover; height: 100%; background-image: url('../../Images/backgroundalt.jpg'); ">
+    
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #000000; border-color: #b200ff;" >
+        <div class="container" style="width:auto; color:white">
+            <div class="navbar-header" style="color:white;" >
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="color:white; ">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Diabetes Health pro", "Home", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse" style="color:white; ">
+
+                <ul class="nav navbar-nav">
+
+
+
+
+                    @if (User.IsInRole("Doctor") || User.IsInRole("Administrator"))
+                    {
+
+                        @*  @if (User.IsInRole("Doctor"))
+            {*@
+                        @*<li>@Html.ActionLink("Diet Plans", "MealPlan", "MealPlan", new { @style = "color: white;" })</li>*@
+                        <li>@Html.ActionLink("Dashboard", "HomeLoggedInDoctor", "Home")</li>
+                        <li>@Html.ActionLink("Diet Plans", "MealPlan", "Home")</li>
+                        <li>@Html.ActionLink("Send Newsletter", "Create", "UploadFiles")</li>
+                        <li>@Html.ActionLink("View my patient appointments", "DoctorAppointments", "Appointments")</li>
+                        <li>@Html.ActionLink("Diet plan rating stats", "RatingChart", "Home")</li>
+
+
+
+                        @*<li>@Html.ActionLink("Get my diet plan!", "MealPlan", "MealPlan", new { @style = "color: white;" })</li>*@
+                    }
+
+
+                    @if (User.IsInRole("Patient") || User.IsInRole("Administrator"))
+                    {
+                        <li>@Html.ActionLink("Dashboard", "HomeLoggedIn", "Home")</li>
+                        <li>@Html.ActionLink("View my doctor appointments", "Index", "Appointments")</li>
+                        <li>@Html.ActionLink("Make an appointment", "Create", "Appointments")</li>
+                        <li>@Html.ActionLink("Healthy Diet Plans", "View_Diet_Plans", "DietPlans")</li>
+                        <li>@Html.ActionLink("Diet plan rating stats", "RatingChart", "Home")</li>
+                        <li>@Html.ActionLink("Record Blood Sugar", "Create", "BloodSugarLevels")</li>
+
+                    }
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+
+                    @*    @if (User.IsInRole("Patient"))
+        {*@
+                    @*<li>@Html.ActionLink("Home", "Home", "Home")</li>*@
+
+
+                    @*
+        }*@
+
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        
+        <footer style="position: fixed; right: 0; bottom: 0; width: 100%; color: white;">
+      
+         
+            <p>&copy; @DateTime.Now.Year - Diabetes Health Pro</p>
+        </footer>
+    </div>
+
+    
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
